@@ -39,7 +39,7 @@ export default class Exhibition extends React.Component {
           {listChildren}
         </TweenOne>
       </div>
-      <DocumentTitle title="案例展示 - 布布在线科技" />
+      <DocumentTitle title="案例分享 - 布布在线科技" />
     </div>);
   }
 }

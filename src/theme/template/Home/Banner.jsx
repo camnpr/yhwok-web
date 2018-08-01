@@ -52,11 +52,11 @@ export default class Banner extends React.PureComponent {
           className={`${this.props.className}-text`}
           delay={300}
         >
-          <h1 key="h1">Motion Design</h1>
-          <h3 key="h3">Animation specification and components of Ant Design.</h3>
+          <h1 key="h1">布布在线科技</h1>
+          <h3 key="h3">专业建站，提供企业或个人所需的三端（PC、H5、APP）服务！</h3>
           <p key="p">
-            使用 布布在线科技 能够快速在 React 框架中使用动画。<br />
-            我们提供了单项，组合动画，以及整套解决方案
+            解决客户网站需求、域名、服务器部署、性能调优、后期维护之闭环方案！<br />
+            提供整站源码，可安装到自己的服务器，安全稳定！
           </p>
           <div key="button">
             <Link to="/language/basic" className={`${this.props.className}-text-button`}>

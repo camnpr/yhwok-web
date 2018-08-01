@@ -2,8 +2,8 @@ const commonConfig = require('./bisheng.common.config');
 
 module.exports = Object.assign({
   source: {
-    language: './language',
-    components: './components',
+    about: './about',
+    products: './products',
     exhibition: './exhibition',
   },
   output: './_site',

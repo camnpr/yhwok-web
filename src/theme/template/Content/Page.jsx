@@ -50,7 +50,7 @@ class Page extends React.PureComponent {
     this.state.isHash = false;
     const props = this.props;
     const pathNames = props.pathname.split('/');
-    const isComponent = pathNames[0] === 'components';
+    const isComponent = pathNames[0] === 'products';
     if (isComponent) {
       if (window.addEventListener) {
         window.addEventListener('scroll', this.onScroll);
@@ -143,9 +143,9 @@ class Page extends React.PureComponent {
       isMobile, pageData, hash, pathname,
     } = this.props;
     const pathNames = cPathNames;
-    // Ａpi页面, 地址转成 components;
+    // Ａpi页面, 地址转成 products;
     const isApi = pathNames[0] === 'api';
-    pathNames[0] = pathNames[0] === 'api' ? 'components' : pathNames[0];
+    pathNames[0] = pathNames[0] === 'api' ? 'products' : pathNames[0];
     const componentBool = isComponent && !isMobile;
 
     const moduleData = componentBool ?
@@ -158,7 +158,7 @@ class Page extends React.PureComponent {
       componentBool ? hash : pathNames, componentBool
     );
 
-    const listKey = pathNames[0] === 'components' && !pathname.match('api') ?
+    const listKey = pathNames[0] === 'products' && !pathname.match('api') ?
       pathname : pathNames[0];
     const getHashActive = () => {
       const hashArray = this.hash.replace('#', '').split('-');
@@ -209,8 +209,8 @@ class Page extends React.PureComponent {
     const key = fileNameToPath(meta.filename);
     /* const className = hash === meta.id || path === link ||
       (!hash && ((!path && i === 0) || path === meta.id)) ? 'active' : ''; */
-    // api 页面，链接把 components 转成 api
-    link = this.props.pathname.match('api') ? link.replace('components', 'api') : link;
+    // api 页面，链接把 products 转成 api
+    link = this.props.pathname.match('api') ? link.replace('products', 'api') : link;
     let linkToChildren = link.split('/')[1] === pathNames[1] ?
       (<a>
         {isNav ? meta.chinese : <span>{meta.chinese || meta.english}</span>}
@@ -254,13 +254,13 @@ class Page extends React.PureComponent {
       className, pathname, isMobile, pageData, children,
     } = this.props;
     const pathNames = pathname.split('/');
-    const isComponent = pathNames[0] === 'components';
+    const isComponent = pathNames[0] === 'products';
     const moduleData = this.getModuleData(pageData);
     const navToRender = isComponent && !isMobile ?
       this.getMenuItems(moduleData[pathNames[0]], pathNames, false, true) : null;
     const listToRender = this.getListChildren(pathNames, moduleData, isComponent);
     const pageDataNew = pathname.match('api') ?
-      pageData.components[pathNames[1]].index : pageData;
+      pageData.products[pathNames[1]].index : pageData;
     const childrenToRender = pathname.match('api') ?
       React.cloneElement(children, { pageData: pageDataNew }) : children;
     return (<div className={`${className}-wrapper`}>

@@ -79,15 +79,7 @@ class ComponentDoc extends React.PureComponent {
       <article className="markdown">
         <h1>{title || english}
           <i>{subtitle || chinese}</i>
-          <iframe
-            key="github-btn"
-            src={`https://ghbtns.com/github-btn.html?user=react-component&repo=${
-            this.props.params.contentName}&type=star&count=true`}
-            frameBorder="0"
-            scrolling="0"
-            width="98px"
-            height="20px"
-          />
+          分享
         </h1>
         {description ? props.utils.toReactComponent(description) : null}
         <DemoLayout vertical={meta.vertical}>

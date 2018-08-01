@@ -4,7 +4,7 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
 import { Link } from 'react-router';
-import CoderDemo from './CodeDemo';
+//import CoderDemo from './CodeDemo';
 
 export default class Page1 extends React.PureComponent {
   static propTypes = {
